@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts":{
-    "watch":"ts-node src/intro.ts"
+    "watch":"tsc --watch src/intro.ts"
   },
   "dependencies": {
     "express": "^4.17.1",

@@ -18,7 +18,6 @@ frutas.map((fruta:string, indice:number):void=>{
     console.log(`estoy en la fruta ${fruta} del indice:${indice}`)
 })
 
-
 const Hola = (name:string):void=>{
      console.log(`Welcome to TypeScript! ${name}`)
 }

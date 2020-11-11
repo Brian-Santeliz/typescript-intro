@@ -1,3 +1,4 @@
+"use strict";
 var miMascota;
 miMascota = "dog";
 console.log(miMascota);
@@ -34,3 +35,4 @@ var Saludar = /** @class */ (function () {
 }());
 var saludo = new Saludar("Brian").bienvenida();
 console.log(saludo);
+//# sourceMappingURL=intro.js.map
