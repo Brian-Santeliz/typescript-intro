@@ -77,21 +77,55 @@ interface Ejemplo {
   edad?: number;
   nombre?: string;
   sexo?: string;
+  isPrograming?: boolean;
+  favoriteBooks?: Array<string>;
 }
-const useGetClientes = (cliente: Cliente): Ejemplo => {
+const useGetClientes = (cliente: Cliente): Array<Ejemplo> => {
   const ejemplo: Ejemplo = {};
-  if (cliente.edad > 18) {
+  if (cliente.edad >= 18) {
     ejemplo.edad = cliente.edad;
     ejemplo.nombre = cliente.nombre;
+    ejemplo.isPrograming = cliente.isPrograming;
+    ejemplo.favoriteBooks = cliente.favoriteBooks;
     if (cliente.sexo) {
       ejemplo.sexo = cliente.sexo;
     }
   }
-  return ejemplo;
+  return [ejemplo];
 };
 const Brian: Cliente = {
   nombre: "Brian",
   edad: 20,
+  favoriteBooks: ["La teoria del todo", "Sapiens"],
+  isPrograming: true,
+  sexo: "Masculino",
 };
 const getClientesResult = useGetClientes(Brian);
 console.log(getClientesResult);
+const nuevaFn = (nombre: string, edad: number = 20): string | undefined => {
+  return `${nombre} - ${edad}`;
+};
+console.log(nuevaFn("Brian Jose", 340));
+
+type brian = string;
+
+const nuevoTipo = function (nombre: brian): string {
+  return nombre;
+};
+console.log(nuevoTipo("brian"));
+interface Compisicion<tipo> {
+  nombre: string;
+  unico: tipo;
+}
+/* Se pueden componer tipos usando interfaces y genericos */
+type nuevoTipo = Compisicion<boolean>;
+type nuevoTipo2 = Compisicion<string>;
+let hola: nuevoTipo;
+let nuevo2: nuevoTipo2;
+
+interface Generico<tipo> {
+  nuevaPropiedad: tipo;
+}
+/* Composicion de interfaces */
+let nuevoTipo3: Compisicion<Generico<string>>;
+// nuevoTipo3.unico.nuevaPropiedad

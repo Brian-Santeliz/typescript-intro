@@ -73,19 +73,38 @@ var TypeScript = /** @class */ (function (_super) {
 var resul = new TypeScript().ejecucion();
 var useGetClientes = function (cliente) {
     var ejemplo = {};
-    if (cliente.edad > 18) {
+    if (cliente.edad >= 18) {
         ejemplo.edad = cliente.edad;
         ejemplo.nombre = cliente.nombre;
+        ejemplo.isPrograming = cliente.isPrograming;
+        ejemplo.favoriteBooks = cliente.favoriteBooks;
         if (cliente.sexo) {
             ejemplo.sexo = cliente.sexo;
         }
     }
-    return ejemplo;
+    return [ejemplo];
 };
 var Brian = {
     nombre: "Brian",
     edad: 20,
+    favoriteBooks: ["La teoria del todo", "Sapiens"],
+    isPrograming: true,
+    sexo: "Masculino",
 };
 var getClientesResult = useGetClientes(Brian);
 console.log(getClientesResult);
+var nuevaFn = function (nombre, edad) {
+    if (edad === void 0) { edad = 20; }
+    return nombre + " - " + edad;
+};
+console.log(nuevaFn("Brian Jose", 340));
+var nuevoTipo = function (nombre) {
+    return nombre;
+};
+console.log(nuevoTipo("brian"));
+var hola;
+var nuevo2;
+/* Composicion de interfaces */
+var nuevoTipo3;
+// nuevoTipo3.unico.nuevaPropiedad
 //# sourceMappingURL=types.js.map
