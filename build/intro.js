@@ -7,7 +7,8 @@ ejemplo = [1, "2", true];
 var frutas = ["Banana", "Manzana", "Pera", "Uvas"];
 var numeros = [2, 2, 3343];
 var numeros2 = [3, 4, 5, 6];
-//Array Method
+console.log("hola");
+//Array Methodw
 var resultado = numeros2.reduce(function (prev, actual) {
     return prev + actual;
 }, 0);

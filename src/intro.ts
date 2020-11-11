@@ -8,8 +8,8 @@ const frutas: Array<string> = ["Banana","Manzana", "Pera", "Uvas"]
 const numeros: number[] = [2,2,3343];
 const numeros2: Array<number> = [3,4,5,6]
  
-
-//Array Method
+console.log("hola")
+//Array Methodw
 const resultado = numeros2.reduce((prev:number,actual:number):number=>{
     return prev+actual
 },0)
