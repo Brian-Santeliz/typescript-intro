@@ -42,3 +42,28 @@ type ejemplo = {
 const typeEjemplo: ejemplo = {
   name: "hola",
 };
+class Tipos {
+  //Puede ser accedido desde fuera y dentro de la clase
+  public hola() {
+    console.log("Hola Mundo");
+    this.retorno();
+  }
+  // Puede ser accedido en la misma clase y en herencias de otroas, pero no en los metodos
+  protected retorno() {
+    console.log("Hola admin");
+  }
+  //Puede ser accedida solo dentro de la clase
+  private despedida() {
+    console.log("Hola mundo desde la misma clase");
+  }
+}
+const tipos = new Tipos().hola();
+
+class TypeScript extends Tipos {
+  ejecucion() {
+    this.retorno();
+  }
+}
+const resul = new TypeScript().ejecucion();
+console.log(resul);
+console.log(tipos);
