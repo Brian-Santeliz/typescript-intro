@@ -65,5 +65,33 @@ class TypeScript extends Tipos {
   }
 }
 const resul = new TypeScript().ejecucion();
-console.log(resul);
-console.log(tipos);
+
+interface Cliente {
+  nombre: string;
+  edad: number;
+  sexo?: string;
+  isPrograming?: boolean;
+  favoriteBooks?: Array<string>;
+}
+interface Ejemplo {
+  edad?: number;
+  nombre?: string;
+  sexo?: string;
+}
+const useGetClientes = (cliente: Cliente): Ejemplo => {
+  const ejemplo: Ejemplo = {};
+  if (cliente.edad > 18) {
+    ejemplo.edad = cliente.edad;
+    ejemplo.nombre = cliente.nombre;
+    if (cliente.sexo) {
+      ejemplo.sexo = cliente.sexo;
+    }
+  }
+  return ejemplo;
+};
+const Brian: Cliente = {
+  nombre: "Brian",
+  edad: 20,
+};
+const getClientesResult = useGetClientes(Brian);
+console.log(getClientesResult);
