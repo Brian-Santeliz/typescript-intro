@@ -264,3 +264,17 @@ const hola2 = ({
   return mensaje;
 };
 console.log(hola2({ nombre: "brian", edad: 434 }));
+
+/* Asertion Tipe Asertion - Convierte de un tipo de dato a otro */
+let asertionTipe: number = <number>anything;
+
+type Persona = { nombre: string; apellido: string };
+
+//Asertio Type a un objeto vacio. lo trannsformo a un tipo de datos lenguaje
+let usuario: Persona = <Persona>{};
+usuario.nombre = "Brian";
+usuario.apellido = "Jose";
+
+let personaSuper = `{"nombre":"Jose", "apellido":"Geniunio"}`;
+let nuevaPersona: Persona = <Persona>JSON.parse(personaSuper);
+console.log(nuevaPersona);

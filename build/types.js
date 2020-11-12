@@ -214,4 +214,13 @@ var hola2 = function (_a) {
     return mensaje;
 };
 console.log(hola2({ nombre: "brian", edad: 434 }));
+/* Asertion Tipe Asertion - Convierte de un tipo de dato a otro */
+var asertionTipe = anything;
+//Asertio Type a un objeto vacio. lo trannsformo a un tipo de datos lenguaje
+var usuario = {};
+usuario.nombre = "Brian";
+usuario.apellido = "Jose";
+var personaSuper = "{\"nombre\":\"Jose\", \"apellido\":\"Geniunio\"}";
+var nuevaPersona = JSON.parse(personaSuper);
+console.log(nuevaPersona);
 //# sourceMappingURL=types.js.map
