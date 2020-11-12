@@ -107,6 +107,7 @@ var nuevo2;
 /* Composicion de interfaces */
 var nuevoTipo3;
 // nuevoTipo3.unico.nuevaPropiedad
+/* BOOLEAN */
 function ejemploDeBoolean(condicion) {
     var resultado;
     if (condicion) {
@@ -118,4 +119,55 @@ function ejemploDeBoolean(condicion) {
     return resultado;
 }
 console.log(ejemploDeBoolean(false));
+/* NUMBERS */
+var numberStudente = 3000;
+var numberStudenteFn = function (estudiantes) {
+    switch (estudiantes) {
+        case 1000:
+            return console.log("El numero de estudiantes es"), estudiantes;
+        case 2000:
+            return console.log("El numero de estudiantes es"), estudiantes;
+        case 3000:
+            return console.log("El numero de estudiantes es"), estudiantes;
+        default:
+            return console.log("El numero de estudiantes no existe."), estudiantes;
+    }
+};
+var valor = numberStudenteFn(3001);
+console.log(valor);
+var fecha = new Date();
+console.log("La fecha es " + fecha);
+/* Binario hexadecimal y Octal*/
+var binario = 15;
+var hexa = 0xf0d;
+var octal = 7;
+console.log(binario);
+console.log(hexa);
+console.log(octal);
+/* STRINGS */
+var nombre = "Jose ";
+var apellido = "Gorila";
+var fullName = "" + (nombre + apellido);
+console.log(fullName);
+/* Especial Types */
+// ANY
+var anything = 2;
+anything = "2";
+anything = true;
+anything = ["2", 2];
+console.log(anything);
+//VOID
+var ejemplo3 = undefined;
+function lenguajeObtener(lenguaje) {
+    var mensaje = lenguaje
+        ? "Bienvenido al lenguaje " + lenguaje
+        : "Programar es divertido!";
+    console.log(mensaje);
+}
+lenguajeObtener();
+//NEVER /* Usado para retirnar error */
+function ejemploError(error) {
+    throw new Error(error);
+}
+// ejemploError("Error en la compilacion de TypeScript");
 //# sourceMappingURL=types.js.map

@@ -130,6 +130,7 @@ interface Generico<tipo> {
 let nuevoTipo3: Compisicion<Generico<string>>;
 // nuevoTipo3.unico.nuevaPropiedad
 
+/* BOOLEAN */
 function ejemploDeBoolean(condicion: boolean): boolean {
   let resultado: boolean;
   if (condicion) {
@@ -139,5 +140,61 @@ function ejemploDeBoolean(condicion: boolean): boolean {
   }
   return resultado;
 }
-
 console.log(ejemploDeBoolean(false));
+
+/* NUMBERS */
+const numberStudente: number = 3000;
+const numberStudenteFn = (estudiantes: number): number => {
+  switch (estudiantes) {
+    case 1000:
+      return console.log("El numero de estudiantes es"), estudiantes;
+    case 2000:
+      return console.log("El numero de estudiantes es"), estudiantes;
+    case 3000:
+      return console.log("El numero de estudiantes es"), estudiantes;
+    default:
+      return console.log("El numero de estudiantes no existe."), estudiantes;
+  }
+};
+const valor: number = numberStudenteFn(3001);
+console.log(valor);
+const fecha: Date = new Date();
+console.log(`La fecha es ${fecha}`);
+
+/* Binario hexadecimal y Octal*/
+let binario: number = 0b1111;
+let hexa: number = 0xf0d;
+let octal: number = 0o7;
+console.log(binario);
+console.log(hexa);
+console.log(octal);
+
+/* STRINGS */
+let nombre: string = "Jose ";
+let apellido: string = "Gorila";
+let fullName = `${nombre + apellido}`;
+console.log(fullName);
+
+/* Especial Types */
+// ANY
+let anything: any = 2;
+anything = "2";
+anything = true;
+anything = ["2", 2];
+console.log(anything);
+
+//VOID
+let ejemplo3: void = undefined;
+function lenguajeObtener(lenguaje?: string): void {
+  let mensaje = lenguaje
+    ? `Bienvenido al lenguaje ${lenguaje}`
+    : "Programar es divertido!";
+  console.log(mensaje);
+}
+lenguajeObtener();
+
+//NEVER /* Usado para retirnar error */
+function ejemploError(error: string): never {
+  throw new Error(error);
+}
+// ejemploError("Error en la compilacion de TypeScript");
