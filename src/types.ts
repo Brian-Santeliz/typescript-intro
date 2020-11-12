@@ -275,6 +275,10 @@ let usuario: Persona = <Persona>{};
 usuario.nombre = "Brian";
 usuario.apellido = "Jose";
 
+/* Alias */
+let usuario3: Persona = {} as Persona;
+console.log("usuario con alias", usuario3);
+
 let personaSuper = `{"nombre":"Jose", "apellido":"Geniunio"}`;
 let nuevaPersona: Persona = <Persona>JSON.parse(personaSuper);
 console.log(nuevaPersona);

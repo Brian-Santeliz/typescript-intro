@@ -220,6 +220,9 @@ var asertionTipe = anything;
 var usuario = {};
 usuario.nombre = "Brian";
 usuario.apellido = "Jose";
+/* Alias */
+var usuario3 = {};
+console.log("usuario con alias", usuario3);
 var personaSuper = "{\"nombre\":\"Jose\", \"apellido\":\"Geniunio\"}";
 var nuevaPersona = JSON.parse(personaSuper);
 console.log(nuevaPersona);

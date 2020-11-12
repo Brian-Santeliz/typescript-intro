@@ -43,7 +43,7 @@ type modeloAuto = {
 };
 class Ferrari extends Auto {
   static nombre: string = "Hola";
-  constructor(nombre: string, puertas: number, modelo: string) {
+  constructor(nombre: string, public readonly puertas: number, modelo: string) {
     super(nombre, puertas, modelo);
   }
   public get getAutoInfo(): modeloAuto {
@@ -54,12 +54,12 @@ class Ferrari extends Auto {
     };
     return auto;
   }
-  static encenderAuto(nombre: string): string {
+
+  public static encenderAuto(nombre: string): string {
     return `Encendiendo el auto ${nombre}`;
   }
 }
-
 // const autoFerrari = new Ferrari("Mustan GT", 4, "2020");
 // console.log(autoFerrari.getAutoInfo);
-console.log(Ferrari.encenderAuto("mustang"));
+// console.log(autoFerrari.("mustang"));
 console.log(Ferrari.nombre);
