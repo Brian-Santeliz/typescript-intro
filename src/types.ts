@@ -229,3 +229,17 @@ const year: Date = new Date();
 const arregloDiferentes: [string, number, Date?] = ["Brian", 10, year];
 arregloDiferentes.map((ejem) => console.log(ejem));
 console.log(arregloDiferentes[2]?.getDay());
+
+/* Valores mixto o alias permite agregar más de un tipo de datos.*/
+let fecha2: number | Date = new Date().getFullYear();
+fecha2 = year;
+console.log(fecha2);
+function saludo2(nombre?: string): string | number {
+  if (!nombre) return 2020;
+  return nombre;
+}
+// console.log(saludo2());
+/* Arreglo de String o un Arreglo de numeros */
+// const arregloChaning: string[] | number[] = [2, 2];
+const arregloChaning: (string | number | boolean)[] = [true, 2, "2", "3", true];
+console.log(arregloChaning);

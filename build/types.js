@@ -192,4 +192,18 @@ var year = new Date();
 var arregloDiferentes = ["Brian", 10, year];
 arregloDiferentes.map(function (ejem) { return console.log(ejem); });
 console.log((_a = arregloDiferentes[2]) === null || _a === void 0 ? void 0 : _a.getDay());
+/* Valores mixto o alias permite agregar más de un tipo de datos.*/
+var fecha2 = new Date().getFullYear();
+fecha2 = year;
+console.log(fecha2);
+function saludo2(nombre) {
+    if (!nombre)
+        return 2020;
+    return nombre;
+}
+// console.log(saludo2());
+/* Arreglo de String o un Arreglo de numeros */
+// const arregloChaning: string[] | number[] = [2, 2];
+var arregloChaning = [true, 2, "2", "3", true];
+console.log(arregloChaning);
 //# sourceMappingURL=types.js.map
