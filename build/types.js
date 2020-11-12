@@ -202,7 +202,16 @@ function saludo2(nombre) {
     return nombre;
 }
 // const arregloChaning: (string | number | boolean)[] = [true, 2, "2", "3", true];
-//Con un tipo de dato personalizado
+//Con un tipo de dato personalizado:
 var arregloChaning = [true, 2, "2", "3", true];
 console.log(arregloChaning);
+var hola2 = function (_a) {
+    var nombre = _a.nombre, _b = _a.alive, alive = _b === void 0 ? false : _b, _c = _a.edad, edad = _c === void 0 ? 20 : _c;
+    if (alive) {
+        return "Esta vivo";
+    }
+    var mensaje = "Nombre: " + nombre + ", Edad: " + edad;
+    return mensaje;
+};
+console.log(hola2({ nombre: "brian", edad: 434 }));
 //# sourceMappingURL=types.js.map

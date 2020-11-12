@@ -244,7 +244,23 @@ function saludo2(nombre?: string): string | number {
 
 type CursoArreglo = string | number | boolean;
 // const arregloChaning: (string | number | boolean)[] = [true, 2, "2", "3", true];
-//Con un tipo de dato personalizado
+//Con un tipo de dato personalizado:
 const arregloChaning: CursoArreglo[] = [true, 2, "2", "3", true];
-
 console.log(arregloChaning);
+interface ParamsFunction {
+  nombre: string;
+  edad?: number;
+  alive?: boolean;
+}
+const hola2 = ({
+  nombre,
+  alive = false,
+  edad = 20,
+}: ParamsFunction): CursoArreglo => {
+  if (alive) {
+    return "Esta vivo";
+  }
+  let mensaje = `Nombre: ${nombre}, Edad: ${edad}`;
+  return mensaje;
+};
+console.log(hola2({ nombre: "brian", edad: 434 }));
