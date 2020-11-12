@@ -23,3 +23,43 @@ universidad.getStudentes;
 universidad.agregarEstudiante = 3; //Metodo SET
 // universidad.modificarNombre = "Ejemplo2";
 console.log(universidad.getNombre);
+
+abstract class Auto {
+  constructor(
+    protected nombre: string,
+    protected puertas: number,
+    protected modelo: string
+  ) {}
+}
+interface getAutoInfo {
+  nombre: string;
+  puertas: number;
+  modelo: string;
+}
+type modeloAuto = {
+  nombre: string;
+  puertas: number;
+  modelo: string;
+};
+class Ferrari extends Auto {
+  static nombre: string = "Hola";
+  constructor(nombre: string, puertas: number, modelo: string) {
+    super(nombre, puertas, modelo);
+  }
+  public get getAutoInfo(): modeloAuto {
+    const auto: getAutoInfo = {
+      nombre: this.nombre,
+      puertas: this.puertas,
+      modelo: this.modelo,
+    };
+    return auto;
+  }
+  static encenderAuto(nombre: string): string {
+    return `Encendiendo el auto ${nombre}`;
+  }
+}
+
+// const autoFerrari = new Ferrari("Mustan GT", 4, "2020");
+// console.log(autoFerrari.getAutoInfo);
+console.log(Ferrari.encenderAuto("mustang"));
+console.log(Ferrari.nombre);
