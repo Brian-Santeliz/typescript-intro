@@ -109,7 +109,7 @@ console.log(nuevaFn("Brian Jose", 340));
 
 type brian = string;
 
-const nuevoTipo = function (nombre: brian): string {
+const nuevoTipo = function (nombre: brian): brian {
   return nombre;
 };
 console.log(nuevoTipo("brian"));
@@ -129,3 +129,15 @@ interface Generico<tipo> {
 /* Composicion de interfaces */
 let nuevoTipo3: Compisicion<Generico<string>>;
 // nuevoTipo3.unico.nuevaPropiedad
+
+function ejemploDeBoolean(condicion: boolean): boolean {
+  let resultado: boolean;
+  if (condicion) {
+    resultado = true;
+  } else {
+    resultado = false;
+  }
+  return resultado;
+}
+
+console.log(ejemploDeBoolean(false));

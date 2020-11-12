@@ -107,4 +107,15 @@ var nuevo2;
 /* Composicion de interfaces */
 var nuevoTipo3;
 // nuevoTipo3.unico.nuevaPropiedad
+function ejemploDeBoolean(condicion) {
+    var resultado;
+    if (condicion) {
+        resultado = true;
+    }
+    else {
+        resultado = false;
+    }
+    return resultado;
+}
+console.log(ejemploDeBoolean(false));
 //# sourceMappingURL=types.js.map
