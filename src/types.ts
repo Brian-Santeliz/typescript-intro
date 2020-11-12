@@ -241,5 +241,10 @@ function saludo2(nombre?: string): string | number {
 // console.log(saludo2());
 /* Arreglo de String o un Arreglo de numeros */
 // const arregloChaning: string[] | number[] = [2, 2];
-const arregloChaning: (string | number | boolean)[] = [true, 2, "2", "3", true];
+
+type CursoArreglo = string | number | boolean;
+// const arregloChaning: (string | number | boolean)[] = [true, 2, "2", "3", true];
+//Con un tipo de dato personalizado
+const arregloChaning: CursoArreglo[] = [true, 2, "2", "3", true];
+
 console.log(arregloChaning);

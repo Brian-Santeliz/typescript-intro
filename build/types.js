@@ -201,9 +201,8 @@ function saludo2(nombre) {
         return 2020;
     return nombre;
 }
-// console.log(saludo2());
-/* Arreglo de String o un Arreglo de numeros */
-// const arregloChaning: string[] | number[] = [2, 2];
+// const arregloChaning: (string | number | boolean)[] = [true, 2, "2", "3", true];
+//Con un tipo de dato personalizado
 var arregloChaning = [true, 2, "2", "3", true];
 console.log(arregloChaning);
 //# sourceMappingURL=types.js.map
