@@ -223,4 +223,11 @@ usuario.apellido = "Jose";
 var personaSuper = "{\"nombre\":\"Jose\", \"apellido\":\"Geniunio\"}";
 var nuevaPersona = JSON.parse(personaSuper);
 console.log(nuevaPersona);
+var Persona3;
+(function (Persona3) {
+    Persona3[Persona3["Brian"] = 0] = "Brian";
+    Persona3[Persona3["persona"] = 1] = "persona";
+})(Persona3 || (Persona3 = {}));
+var nuevaPersona2 = Persona3.Brian;
+console.log(Persona3[nuevaPersona2]);
 //# sourceMappingURL=types.js.map

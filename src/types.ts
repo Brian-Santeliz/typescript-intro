@@ -278,3 +278,14 @@ usuario.apellido = "Jose";
 let personaSuper = `{"nombre":"Jose", "apellido":"Geniunio"}`;
 let nuevaPersona: Persona = <Persona>JSON.parse(personaSuper);
 console.log(nuevaPersona);
+
+type personaEjemplo = {
+  nombre: string;
+  apellido: string;
+};
+enum Persona3 {
+  Brian,
+  persona,
+}
+let nuevaPersona2: Persona3 = Persona3.Brian;
+console.log(Persona3[nuevaPersona2]);
