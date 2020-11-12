@@ -12,6 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var _a;
 var age = 20;
 var firtName = "Brian";
 var progamming = true;
@@ -165,9 +166,30 @@ function lenguajeObtener(lenguaje) {
     console.log(mensaje);
 }
 lenguajeObtener();
-//NEVER /* Usado para retirnar error */
+//NEVER /* Usado para retornar error */
 function ejemploError(error) {
     throw new Error(error);
 }
 // ejemploError("Error en la compilacion de TypeScript");
+/* Tipo de dato y representa la ausencia del valor, */
+var variableUndefined = undefined;
+function retornUndefined() {
+    return undefined;
+}
+// console.log(retornUndefined());
+/* Tipo de dato nulo, Representa un valor */
+var variableNull = null;
+function retornNull() {
+    return null;
+}
+// console.log(retornNull());
+/* Aray */
+var fruticas = ["Banana", "Manzana", "péra"];
+var bananaOnly = fruticas.concat("Guanabana");
+var arregloString = [];
+/* TUPLAS */
+var year = new Date();
+var arregloDiferentes = ["Brian", 10, year];
+arregloDiferentes.map(function (ejem) { return console.log(ejem); });
+console.log((_a = arregloDiferentes[2]) === null || _a === void 0 ? void 0 : _a.getDay());
 //# sourceMappingURL=types.js.map

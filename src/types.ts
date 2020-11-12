@@ -193,8 +193,39 @@ function lenguajeObtener(lenguaje?: string): void {
 }
 lenguajeObtener();
 
-//NEVER /* Usado para retirnar error */
+//NEVER /* Usado para retornar error */
 function ejemploError(error: string): never {
   throw new Error(error);
 }
 // ejemploError("Error en la compilacion de TypeScript");
+
+/* Tipo de dato y representa la ausencia del valor, */
+let variableUndefined: undefined = undefined;
+function retornUndefined(): undefined {
+  return undefined;
+}
+// console.log(retornUndefined());
+
+/* Tipo de dato nulo, Representa un valor */
+let variableNull: null = null;
+function retornNull(): null {
+  return null;
+}
+// console.log(retornNull());
+
+/* Aray */
+const fruticas: string[] = ["Banana", "Manzana", "péra"];
+const bananaOnly: string[] = fruticas.concat("Guanabana");
+// console.log(bananaOnly);
+// console.log(fruticas);
+/* Array Genercos */
+interface Nuevo {
+  nombre: string;
+}
+let arregloString: Array<Nuevo> = [];
+
+/* TUPLAS */
+const year: Date = new Date();
+const arregloDiferentes: [string, number, Date?] = ["Brian", 10, year];
+arregloDiferentes.map((ejem) => console.log(ejem));
+console.log(arregloDiferentes[2]?.getDay());
