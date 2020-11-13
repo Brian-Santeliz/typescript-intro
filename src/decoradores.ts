@@ -1,16 +1,18 @@
+import { mostratDecoradores } from "./comparar";
+
 const ejemplo2 = ["eje", "2"];
 const ejemploObjeto = {
   nombre: "Brian",
   apelido: "Santeliz",
 };
 /* FOR OF usado para arreglo y String */
-for (let e of ejemplo2) {
-  // console.log(e);
-}
-/* For IN Usado para recorrer objetos */
-for (let e in ejemploObjeto) {
-  // console.log(e);
-}
+// for (let e of ejemplo2) {
+//   // console.log(e);
+// }
+// /* For IN Usado para recorrer objetos */
+// for (let e in ejemploObjeto) {
+//   // console.log(e);
+// }
 
 /* Tipe Asertion. M-1 */
 let cualquierCosa: any = " cualquierCosa";
@@ -60,6 +62,25 @@ const Entidad = ({ nombreClase }: any) => {
     target.nombreClase = nombreClase;
   };
 };
+
+const decoradorFuncion = (value: boolean): any => {
+  return (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ): void => {
+    mostratDecoradores;
+    descriptor.enumerable = value;
+  };
+};
+const DecoradorSoloLectura = (
+  target: any,
+  propertyKey: string,
+  descriptor: PropertyDescriptor
+) => {
+  descriptor.writable = false;
+  return descriptor;
+};
 @Entidad({ nombreClase: "Lenguaje desde decorador" })
 class Lenguaje implements ILenguaje {
   _nombre: string;
@@ -80,11 +101,27 @@ class Lenguaje implements ILenguaje {
   set nombre(nombre: string) {
     this._nombre = nombre;
   }
+  @decoradorFuncion(false)
+  public metodo() {
+    console.log("metodo de la clas");
+  }
+  @decoradorFuncion(true)
+  metodo2() {
+    console.log("Metodo 2 de la clase");
+  }
+  @DecoradorSoloLectura
+  metodoDeLectura() {}
 }
 @Entidad({ nombreClase: "nueva clase" })
 class nuevaClase {}
 const comprarDecorador = function (clase: any) {
-  console.log(clase);
+  // console.log(clase);
 };
 comprarDecorador(nuevaClase);
 comprarDecorador(Lenguaje);
+const lenguaje = new Lenguaje("Java", 2);
+mostratDecoradores(Lenguaje);
+/* 
+  Metodo de solo lectura
+*/
+lenguaje.metodoDeLectura = function () {};
