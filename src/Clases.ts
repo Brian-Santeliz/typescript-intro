@@ -55,11 +55,24 @@ class Ferrari extends Auto {
     return auto;
   }
 
+  static obtenerAutoString(auto: modeloAuto): string {
+    return JSON.stringify(auto);
+  }
   public static encenderAuto(nombre: string): string {
     return `Encendiendo el auto ${nombre}`;
+  }
+  static obtenerAutoParseado(auto: string): modeloAuto {
+    return JSON.parse(auto);
   }
 }
 // const autoFerrari = new Ferrari("Mustan GT", 4, "2020");
 // console.log(autoFerrari.getAutoInfo);
 // console.log(autoFerrari.("mustang"));
 console.log(Ferrari.nombre);
+const autoString = Ferrari.obtenerAutoString({
+  nombre: "Ford",
+  modelo: "Ford 350",
+  puertas: 2,
+});
+console.log(autoString); //String
+console.log(Ferrari.obtenerAutoParseado(autoString)); //Objeto
