@@ -49,3 +49,42 @@ class Usuario {
   }
 }
 const instanciaUsuario = new Usuario(usuarioLlamada);
+
+/* Inplementando una interface */
+interface ILenguaje {
+  _nombre: string;
+  _id: number;
+}
+const Entidad = ({ nombreClase }: any) => {
+  return (target: any) => {
+    target.nombreClase = nombreClase;
+  };
+};
+@Entidad({ nombreClase: "Lenguaje desde decorador" })
+class Lenguaje implements ILenguaje {
+  _nombre: string;
+  _id: number;
+  constructor(_nombre: string, _id: number) {
+    this._nombre = _nombre;
+    this._id = _id;
+  }
+  get id(): number {
+    return this._id;
+  }
+  get nombre(): string {
+    return this._nombre;
+  }
+  set id(id: number) {
+    this._id = id;
+  }
+  set nombre(nombre: string) {
+    this._nombre = nombre;
+  }
+}
+@Entidad({ nombreClase: "nueva clase" })
+class nuevaClase {}
+const comprarDecorador = function (clase: any) {
+  console.log(clase);
+};
+comprarDecorador(nuevaClase);
+comprarDecorador(Lenguaje);
